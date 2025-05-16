@@ -1,4 +1,14 @@
 body {
     margin-top: 50px;
     margin-bottom: 50px;
+    background-color: lightblue;
+     
 }
+.badge-position {
+    background-color: black;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+}
+
