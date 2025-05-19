@@ -15,7 +15,7 @@ const players = [
     },
     {
         firstName: 'Jasson',
-        lastName: 'Dominnguez',
+        lastName: 'Dominguez',
         position: 'LF',
         age: 22,
         photo: 'imgs/jasond.png'

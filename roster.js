@@ -1,13 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const grid = document.getElementById('rosterGrid')
-
+    const grid = document.getElementById('rosterGrid');
     const render = list => {
-        grid.innerHTML = ''
+        grid.innerHTML = '';
         list.forEach(p => {
-            const col = document.createElement('div')
-            col.className = 'col-6 col-lg-2'
-
+            const col = document.createElement('div');
+            col.className = 'col-6 col-lg-2';
             col.innerHTML = 
             `
                 <div class="card h-100 shadow-sm">
@@ -18,20 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="small text-muted mb-0">Age ${p.age}</p>
                     </div>
                 </div>
-            `
-            grid.appendChild(col)
-        })
-
-
-    }
-
-
-
-
-
-
-
-
-
-render(players)
-})
+            `;
+            grid.appendChild(col);
+        });
+    };
+    render(players);
+});
