@@ -1,38 +1,9 @@
 body {
     margin: 0;
-    background-color: #f8f9fa;
+     background-image: url("imgs/yankees.jpg");
+     background-repeat: no-repeat;
 }
 
-/* Landing Page */
-.splash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #13294B; /* Yankees navy */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.splash-logo {
-    max-width: 50%;
-    max-height: 50%;
-    width: auto;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.1); /* Fallback for visibility */
-}
-
-.fade-out {
-    animation: fadeOut 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
 
 /* Home and Roster Pages */
 .navbar, .btn-primary, footer {
