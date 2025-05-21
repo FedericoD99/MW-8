@@ -1,12 +1,50 @@
-body {
-    margin: 0;
-     background-image: url("imgs/yankees.jpg");
-     background-repeat: no-repeat;
+html {
+    height: 100%;
 }
 
+body {
+    margin: 0;
+    background-image: url("imgs/yankees.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.roster-page {
+    background-image: url("imgs/yankees.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+.about-page {
+    background-color: rgba(173, 216, 230, 0.7) !important;
+    color: #333 !important;
+}
+
+main.container {
+    margin-top: 20px;
+    flex: 1 0 auto;
+}
+
+footer {
+    background-color: #13294B !important;
+    color: white !important;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
 
 /* Home and Roster Pages */
-.navbar, .btn-primary, footer {
+.navbar, .btn-primary {
     background-color: #13294B !important;
 }
 
@@ -15,23 +53,167 @@ body {
 }
 
 .nav-link:hover {
-    color: #C0C0C0 !important; /* Silver on hover */
+    color: #C0C0C0 !important;
 }
 
-main.container {
-    margin-top: 20px;
+/* Home page larger text and buttons */
+main.container .display-3 {
+    font-size: 4rem;
+}
+
+.btn-xl {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
 }
 
 /* Roster Grid */
 .card-img-top {
-    height: 200px;
+    height: 120px;
     object-fit: cover;
 }
 
 .badge-position {
-    background-color: black;
-    color: white;
+    color: white !important;
     padding: 0.25em 0.5em;
     border-radius: 0.25rem;
     font-size: 0.75rem;
+    display: inline-block;
+}
+
+/* Position-specific badge colors */
+.position-RF { background-color: #1E90FF; }
+.position-1B { background-color: #228B22; }
+.position-LF { background-color: #FF4500; }
+.position-CF { background-color: #FFD700; }
+.position-SS { background-color: #DC143C; }
+.position-2B { background-color: #6A5ACD; }
+.position-DH { background-color: #FF69B4; }
+.position-3B { background-color: #8B008B; }
+.position-C { background-color: #20B2AA; }
+.position-RP { background-color: #FF6347; }
+.position-P { background-color: #4682B4; }
+.position-SP { background-color: #9ACD32; }
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-dialog {
+    position: relative;
+    margin: 1.75rem auto;
+    max-width: 500px;
+    pointer-events: none;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #13294B;
+    color: white;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-close:hover {
+    color: #ccc;
+}
+
+.modal-body {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.375rem 0.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+
+.fade {
+    transition: opacity 0.15s linear;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+/* Search bar styling */
+#searchInput, #positionFilter {
+    border-radius: 0.25rem;
+}
+
+#clearSearch {
+    border-color: #13294B;
+    color: #13294B;
+}
+
+#clearSearch:hover {
+    background-color: #13294B;
+    color: white;
 }

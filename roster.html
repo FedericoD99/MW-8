@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My Team Roster</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/png" href="imgs/favicon.png" />
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">Yankees</a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="about.html">About Info</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="roster.html">Roster</a>
-                            </li>
-                        </ul>
-                    </div>
+<head>
+    <title>My Team Roster</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="imgs/favicon.png" />
+</head>
+<body class="roster-page">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Yankees</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="roster.html">Roster</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </header>
-        <main class="container">
-            <div id="rosterGrid" class="row g-3">
-                <!-- Roster cards rendered by roster.js -->
             </div>
-        </main>
-        <footer class="text-center py-3">
-            <p>&copy; 2025 Yankees Fan Site</p>
-        </footer>
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-        <script src="players.js"></script>
-        <script src="roster.js"></script>
-    </body>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <div class="mb-4">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search by name or age (e.g., Aaron or 20-30)">
+                </div>
+                <div class="col-md-4">
+                    <select id="positionFilter" class="form-select">
+                        <option value="all">All Positions</option>
+                        <!-- Options populated dynamically by roster.js -->
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button id="clearSearch" class="btn btn-outline-secondary w-100">Clear</button>
+                </div>
+            </div>
+        </div>
+        <div id="rosterGrid" class="row g-2"></div>
+    </main>
+    <footer class="text-center py-3">
+        <p>© 2025 Yankees Fan Site</p>
+    </footer>
+    <script src="players.js"></script>
+    <script src="roster.js"></script>
+</body>
 </html>
