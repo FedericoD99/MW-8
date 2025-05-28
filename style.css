@@ -217,3 +217,39 @@ main.container .display-3 {
     background-color: #13294B;
     color: white;
 }
+
+
+.navbar {
+    padding: 1.5rem 1rem;
+}
+
+/* Enlarge navbar brand */
+.navbar-brand {
+    font-size: 2rem;
+    padding: 0.5rem 1rem; 
+}
+
+/* Enlarge nav links */
+.nav-link {
+    font-size: 1.5rem; 
+    padding: 0.75rem 1.25rem; 
+}
+
+.navbar-toggler {
+    font-size: 1.5rem; 
+    padding: 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem; 
+    }
+    .nav-link {
+        font-size: 1.25rem; 
+        padding: 0.5rem 1rem; 
+    }
+}
+main.container .display-3 {
+    font-size: 4rem;
+    color: white !important; 
+}
